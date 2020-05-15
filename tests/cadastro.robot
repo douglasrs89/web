@@ -32,6 +32,6 @@ Dado que eu tenho um novo produto
 Quando eu cadastro este produto
   Wait Until Element Is Visible    class:product-add
   Click Element                    class:product-add
-  Input Text                       css=input[placeholder$="produto?"]    ${product_json['title']
+  Input Text                       css=input[placeholder$="produto?"]    ${product_json['title']}
 
   Sleep    10
