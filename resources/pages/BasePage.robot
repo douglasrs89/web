@@ -16,7 +16,6 @@ Open Session
 Login Session
   [Arguments]     ${email}    ${pass}
   Open Session
-  
   Go To   ${base_url}/login
   LoginPage.Login With    ${email}    ${pass}
 
@@ -31,4 +30,4 @@ After Test
 
 ## helpers
 Open Chrome
-  Open Browser       ${base_url}    chrome    options=add_experimental_option('excludeSwitches', ['enable-logging'])
+  Open Browser       about:blank    chrome    options=add_experimental_option('excludeSwitches', ['enable-logging'])

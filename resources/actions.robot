@@ -2,6 +2,7 @@
 Documentation     Aqui teremos todas as palavras de ação para implementar os testes.
 
 Library     SeleniumLibrary
+Library     libs/database.py
 
 Resource    pages/BasePage.robot
 Resource    pages/LoginPage.robot
