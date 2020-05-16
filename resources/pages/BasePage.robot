@@ -2,6 +2,8 @@
 Documentation       BasePage
 ...                 Representa a inicialização do Selenium e demais recursos como ganchos e helpers
 
+Library    OperatingSystem
+
 ***Variables***
 ${base_url}    http://localhost:3000
 
@@ -27,6 +29,12 @@ Clear Local Storage
 
 After Test
   Capture Page Screenshot
+
+Get Data From Json File
+  [Arguments]    ${json_file}
+    ${string_file}=      Get File    ${EXECDIR}/resources/fixtures/${json_file}
+    ${data_json}=     Evaluate    json.loads($string_file)    json
+    [Return]  ${data_json}
 
 ## helpers
 Open Chrome
