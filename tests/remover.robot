@@ -1,8 +1,8 @@
 ***Settings***
-Documentation     Cadastro de Produtos
-...               Sendo um administrador de catálogo
-...               Quero cadastrar novos produtos
-...               Para que eu possa disponibiliza-los na loja virtual
+Documentation     Exclusão de Produtos
+...               Sendo um administrador de catálogo que possui produtos indesejados
+...               Quero deletar novos produtos
+...               Para que eu possa manter um cadastro organizado
 
 Resource    ../resources/actions.robot
 

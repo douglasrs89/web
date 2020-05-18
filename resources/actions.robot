@@ -35,15 +35,17 @@ Dado que eu tenho um novo produto
   Set Test Variable          ${product_json}
   Set Product Variables
 
-Quando eu cadastro este produto
-  Wait Until Element Is Visible    ${BUTTON_PRODUCT_ADD}
-  Click Element                    ${BUTTON_PRODUCT_ADD}
-  Input Text                       ${INPUT_PRODUCT_TITLE}    ${product_json['title']}
-  Click Element                    ${SELECT_GATEGORIA}
-  Wait Until Element Is Visible    ${SELECT_GATEGORIA_TEXT}
-  Click Element                    ${SELECT_GATEGORIA_TEXT}
-  Input Text                       ${INPUT_PRODUCT_PRICE}    ${product_json['price']}
-  Click Element                    ${BUTTON_CREATE_PRODUCT}
+Quando faço o cadastro deste produto
+  Go To Add Form
+  Create New Product    ${product_json}
 
 Então devo ver este item na lista
   Table Should Contain             ${TABLE_PRODUCT}    ${product_json['title']}
+
+Mas este produto já foi cadastrado
+  Go To Add Form
+  Create New Product    ${product_json}
+
+Então devo ver a mensagem de alerta
+  [Arguments]    ${expect_alert}
+  Wait Until Element Contains    ${ALERT_DANGER}    ${expect_alert}
