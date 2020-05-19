@@ -12,3 +12,13 @@ ${TABLE_PRODUCT}            class:table
 Go To Add Form
   Wait Until Element Is Visible    ${BUTTON_PRODUCT_ADD}
   Click Element                    ${BUTTON_PRODUCT_ADD}
+
+Request Removal
+  [Arguments]     ${title}
+  Click Element     //tr[td//text()[contains(., '${title}')]]//button
+
+Confirm Removal
+  Click Element     xpath://div[@class='swal2-buttonswrapper']//button[text()="Sim!"]
+
+Cancel Removal
+  Click Element     xpath://div[@class='swal2-buttonswrapper']//button[text()="Não!"]

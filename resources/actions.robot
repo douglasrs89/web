@@ -4,6 +4,7 @@ Documentation     Aqui teremos todas as palavras de ação para implementar os t
 Library     SeleniumLibrary
 Library     libs/database.py
 
+Resource    helpers.robot
 Resource    pages/BasePage.robot
 Resource    pages/LoginPage.robot
 Resource    pages/ProductsPage.robot
@@ -49,3 +50,23 @@ Mas este produto já foi cadastrado
 Então devo ver a mensagem de alerta
   [Arguments]    ${expect_alert}
   Wait Until Element Contains    ${ALERT_DANGER}    ${expect_alert}
+
+# exclusão
+Dado "${json_file}" é um produto indesejado
+  #implementando com o conceito shared steps
+  Dado que eu tenho um novo produto  ${json_file}
+  Quando faço o cadastro deste produto
+
+
+Quando eu solicito a Exclusão
+  Request Removal    ${product_json['title']}
+
+E confirmo a solicitação
+  Confirm Removal
+
+E cancelo a solicitação
+  Cancel Removal
+
+Então não devo ver este item no catálogo
+  Wait Until Element Does Not Contain     class:table     ${product_json['title']}
+  
