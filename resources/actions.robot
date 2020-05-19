@@ -68,5 +68,4 @@ E cancelo a solicitação
   Cancel Removal
 
 Então não devo ver este item no catálogo
-  Wait Until Element Does Not Contain     class:table     ${product_json['title']}
-  
+  Wait Until Element Does Not Contain    ${TABLE_PRODUCT}    ${product_json['title']}

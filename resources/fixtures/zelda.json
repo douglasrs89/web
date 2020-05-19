@@ -3,6 +3,6 @@
   "cat": "Nintendo",
   "price": "99.99",
   "desc": "O link que é o principal!",
-  "producers": "Nintendo",
-  "image": "zelda.jpg"
+  "producers": ["Nintendo"],
+  "file_name": "zelda.jpg"
 }

@@ -6,7 +6,8 @@ Documentation       ProductsPage
 ***Variables***
 ${BUTTON_PRODUCT_ADD}       class:product-add
 ${TABLE_PRODUCT}            class:table
-
+${BUTTON_MODAL_YES}         xpath://div[@class='swal2-buttonswrapper']//button[text()="Sim!"]
+${BUTTON_MODAL_NO}          xpath://div[@class='swal2-buttonswrapper']//button[text()="Não!"]
 
 ***Keywords***
 Go To Add Form
@@ -18,7 +19,7 @@ Request Removal
   Click Element     //tr[td//text()[contains(., '${title}')]]//button
 
 Confirm Removal
-  Click Element     xpath://div[@class='swal2-buttonswrapper']//button[text()="Sim!"]
+  Click Element     ${BUTTON_MODAL_YES}
 
 Cancel Removal
-  Click Element     xpath://div[@class='swal2-buttonswrapper']//button[text()="Não!"]
+  Click Element     ${BUTTON_MODAL_NO}

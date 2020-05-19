@@ -3,6 +3,6 @@
   "cat": "Nintendo",
   "price": "99.99",
   "desc": "Impossível sem salvar!",
-  "producers": "Nintendo",
-  "image": "mario.jpg"
+  "producers": ["Nintendo"],
+  "file_name": "mario1.jpg"
 }
