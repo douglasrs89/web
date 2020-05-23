@@ -6,7 +6,6 @@ Documentation       ProductsAddPage
 ***Variables***
 ${INPUT_PRODUCT_TITLE}      css:input[placeholder$="produto?"]
 ${SELECT_GATEGORIA}         css:input[placeholder^=Gat]
-# ${SELECT_GATEGORIA_TEXT}    xpath://li//span[text()='${product_json['cat']}']
 ${INPUT_PRODUCT_PRICE}      css:input[name=price]
 ${BUTTON_CREATE_PRODUCT}    id:create-product
 ${ALERT_DANGER}             class:alert-danger
@@ -17,12 +16,14 @@ ${ALERT_PRODCUT}            css:.card-body .alert-info
 
 ***Keywords***
 Set Product Variables
-  Run Keyword If     '${product_json['cat']}'!='${EMPTY}'    Set Test Variable    ${SELECT_GATEGORIA_TEXT}    xpath://li//span[text()='${product_json['cat']}']
+  Run Keyword If    "${product_json['cat']}" != "${EMPTY}"
+  ...               Set Test Variable    ${SELECT_GATEGORIA_TEXT}    xpath://li//span[text()='${product_json['cat']}']
 
 Create New Product
   [Arguments]    ${product_json}
   Input Text         ${INPUT_PRODUCT_TITLE}    ${product_json['title']}
-  Select Category
+  Run Keyword If     "${product_json['cat']}" != "${EMPTY}"
+  ...                Select Category
   Input Text         ${INPUT_PRODUCT_PRICE}    ${product_json['price']}
   Input Producers    ${product_json['producers']}
   Input Text         ${TEXTAREA_DESCRIPTION}    ${product_json['desc']}

@@ -19,6 +19,9 @@ Login Session
   Go To   ${base_url}/login
   LoginPage.Login With    ${email}    ${pass}
 
+Products Page
+  Go To   ${base_url}/admin/products
+
 Close Session
   Close Browser
 
