@@ -4,7 +4,7 @@ Documentation     Exclusão de Produtos
 ...               Quero deletar novos produtos
 ...               Para que eu possa manter meu catálogo organizado
 
-Resource    ../resources/actions.robot
+Resource    ../../resources/actions.robot
 
 Suite Setup       Login Session    douglas@ninjapixel.com    q1w2E3R4@!
 Suite Teardown    Close Session

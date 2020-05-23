@@ -13,15 +13,15 @@ ${ALERT_DANGER}             class:alert-danger
 ${INPUT_PRODUCERS}          class:producers
 ${TEXTAREA_DESCRIPTION}     css:textarea[name=description]
 ${INPUT_IMAGE}              id:upcover
+${ALERT_PRODCUT}            css:.card-body .alert-info
 
 ***Keywords***
 Set Product Variables
-  Set Test Variable    ${SELECT_GATEGORIA_TEXT}    xpath://li//span[text()='${product_json['cat']}']
+  Run Keyword If     '${product_json['cat']}'!='${EMPTY}'    Set Test Variable    ${SELECT_GATEGORIA_TEXT}    xpath://li//span[text()='${product_json['cat']}']
 
 Create New Product
   [Arguments]    ${product_json}
   Input Text         ${INPUT_PRODUCT_TITLE}    ${product_json['title']}
-  Click Element      ${SELECT_GATEGORIA}
   Select Category
   Input Text         ${INPUT_PRODUCT_PRICE}    ${product_json['price']}
   Input Producers    ${product_json['producers']}
@@ -32,16 +32,16 @@ Create New Product
 Input Producers
   [Arguments]    ${producers}
   FOR    ${p}    IN    @{product_json['producers']}
-         Input Text    ${INPUT_PRODUCERS}     ${p}
-         Press Keys    ${INPUT_PRODUCERS}     TAB
+         Input Text    ${INPUT_PRODUCERS}    ${p}
+         Press Keys    ${INPUT_PRODUCERS}    TAB
   END
 
 Select Category
-  # [Arguments]    ${cat}
+  Click Element      ${SELECT_GATEGORIA}
   Wait Until Element Is Visible    ${SELECT_GATEGORIA_TEXT}
   Click Element                    ${SELECT_GATEGORIA_TEXT}
 
 Upload Photo
   [Arguments]     ${file_name}
-  ${image_file}=    Set Variable      ${EXECDIR}/resources/fixtures/images/${file_name}
+  ${image_file}=    Set Variable      ${EXECDIR}/web/resources/fixtures/images/${file_name}
   Choose File       ${INPUT_IMAGE}    ${image_file}

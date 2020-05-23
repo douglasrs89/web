@@ -4,7 +4,7 @@ Documentation     Cadastro de Produtos
 ...               Quero cadastrar novos produtos
 ...               Para que eu possa disponibiliza-los na loja virtual
 
-Resource    ../resources/actions.robot
+Resource    ../../resources/actions.robot
 
 Library     SeleniumLibrary
 
