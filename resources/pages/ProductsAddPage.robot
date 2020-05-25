@@ -44,5 +44,5 @@ Select Category
 
 Upload Photo
   [Arguments]     ${file_name}
-  ${image_file}=    Set Variable      ${EXECDIR}/web/resources/fixtures/images/${file_name}
+  ${image_file}=    Set Variable      ${EXECDIR}/resources/fixtures/images/${file_name}
   Choose File       ${INPUT_IMAGE}    ${image_file}
