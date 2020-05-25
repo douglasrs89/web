@@ -6,6 +6,7 @@ Library     libs/database.py
 
 Resource    helpers.robot
 Resource    pages/BasePage.robot
+Resource    pages/Components.robot
 Resource    pages/LoginPage.robot
 Resource    pages/ProductsPage.robot
 Resource    pages/ProductsAddPage.robot
@@ -25,8 +26,8 @@ Então devo ser autenticado
   Wait Until Element Contains      ${LOGGED_USER}    Douglas Rosa
 
 Então devo ver a mensagem de alerta "${expect_alert}" 
-  Wait Until Element Is Visible     ${DIV_ALERT}
-  Element Text Should Be            ${DIV_ALERT}    ${expect_alert}
+  Wait Until Element Is Visible     ${ALERT}
+  Element Text Should Be            ${ALERT}    ${expect_alert}
 
 ## product steps
 Dado que eu tenho um novo produto
@@ -49,11 +50,15 @@ Mas este produto já foi cadastrado
 
 Então devo ver a mensagem de alerta
   [Arguments]    ${expect_alert}
+  Wait Until Element Contains    ${ALERT}    ${expect_alert}
+
+Então devo ver a mensagem de erro
+  [Arguments]    ${expect_alert}
   Wait Until Element Contains    ${ALERT_DANGER}    ${expect_alert}
 
-Então devo ver uma mensagem de alerta
+Então devo ver a mensagem informativa
   [Arguments]    ${expect_alert}
-  Wait Until Element Contains    ${ALERT_PRODCUT}    ${expect_alert}
+  Wait Until Element Contains    ${ALERT_INFO}    ${expect_alert}
 
 # exclusão
 Dado "${json_file}" é um produto indesejado

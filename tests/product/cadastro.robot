@@ -26,4 +26,4 @@ Produto duplicado
   Dado que eu tenho um novo produto     master.json
   Mas este produto já foi cadastrado
   Quando faço o cadastro deste produto
-  Então devo ver a mensagem de alerta    Oops - Este produto já foi cadastrado!
+  Então devo ver a mensagem de erro    Oops - Este produto já foi cadastrado!

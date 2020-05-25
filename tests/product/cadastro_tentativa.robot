@@ -17,7 +17,7 @@ Tentar cadastrar produtos
   [Arguments]    ${json_file}    ${expected_message}
   Dado que eu tenho um novo produto    ${json_file}
   Quando faço o cadastro deste produto
-  Então devo ver uma mensagem de alerta    ${expected_message}
+  Então devo ver a mensagem de alerta    ${expected_message}
   [Teardown]    Product Template Teardown
 
 Product Template Teardown
