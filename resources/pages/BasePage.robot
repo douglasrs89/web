@@ -9,10 +9,10 @@ ${base_url}    http://localhost:3000
 
 ## hooks
 Open Session
-  Run Keyword If    "${browser" == "chrome"
+  Run Keyword If    "${browser}" == "chrome"
   ...               Open Chrome
 
-  Run Keyword If    "${browser" == "headless"
+  Run Keyword If    "${browser}" == "headless"
   ...               Open Chrome Headless
 
   Set Window Size               1440    900
