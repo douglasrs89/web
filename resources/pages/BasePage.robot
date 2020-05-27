@@ -41,4 +41,4 @@ Open Chrome
   Open Browser       about:blank    chrome    options=add_experimental_option('excludeSwitches', ['enable-logging'])
 
 Open Chrome Headless
-  Open Browser       about:blank    headlesschrome    options=add_argument('')
+  Open Browser       about:blank    headlesschrome
