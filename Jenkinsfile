@@ -1,7 +1,7 @@
 pipeline {
    agent {
        docker {
-           image 'python:3.7.7-stretch'
+           image 'douglasrs89/pychorme'
            args '--network=skynet'
        }
    }
