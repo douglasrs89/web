@@ -41,4 +41,4 @@ Open Chrome
   Open Browser       about:blank    chrome    options=add_experimental_option('excludeSwitches', ['enable-logging'])
 
 Open Chrome Headless
-  Open Browser       about:blank    headlesschrome     options=add_argument('--no-sandbox --disable-gpu')
+  Open Browser       about:blank    headlesschrome     options=add_argument('--disable-dev-shm-usage')
