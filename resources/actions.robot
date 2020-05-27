@@ -16,7 +16,7 @@ Resource    pages/SideBar.robot
 
 ## login steps
 Dado que acesso a página login
-  Go To   http://localhost:3000/login
+  Go To   http://pixel-web:3000/login
 
 Quando eu submeto minhas credenciais "${email}" e "${pass}"
   LoginPage.Login With    ${email}    ${pass}
