@@ -9,7 +9,12 @@ ${base_url}    http://localhost:3000
 
 ## hooks
 Open Session
-  Open Chrome
+  Run Keyword If    "${browser" == "chrome"
+  ...               Open Chrome
+
+  Run Keyword If    "${headless" == "chrome"
+  ...               Open Chrome Headless
+  
   Set Window Size               1440    900
   Set Selenium Implicit Wait    5
 
@@ -34,3 +39,6 @@ After Test
 ## helpers
 Open Chrome
   Open Browser       about:blank    chrome    options=add_experimental_option('excludeSwitches', ['enable-logging'])
+
+Open Chrome Headless
+  Open Browser       about:blank    headlesschrome
