@@ -3,7 +3,7 @@ Documentation       BasePage
 ...                 Representa a inicialização do Selenium e demais recursos como ganchos e helpers
 
 ***Variables***
-${base_url}    http://localhost:3000
+${base_url}    http://pixel-web:3000
 
 ***Keywords***
 
@@ -41,4 +41,4 @@ Open Chrome
   Open Browser       about:blank    chrome    options=add_experimental_option('excludeSwitches', ['enable-logging'])
 
 Open Chrome Headless
-  Open Browser       about:blank    headlesschrome
+  Open Browser       about:blank    headlesschrome    options=add_argument('')
