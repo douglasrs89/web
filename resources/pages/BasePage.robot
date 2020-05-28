@@ -16,7 +16,7 @@ Open Session
   ...               Open Chrome Headless
 
   Set Window Size               1440    900
-  Set Selenium Implicit Wait    5
+  Set Selenium Implicit Wait    10
 
 Login Session
   [Arguments]     ${email}    ${pass}
